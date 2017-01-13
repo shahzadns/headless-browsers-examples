@@ -1,0 +1,7 @@
+# IDE related files
+.idea
+.vscode
+
+#Dependencies
+node_modules
+/**/node_modules
