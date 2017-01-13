@@ -1,2 +1,2 @@
-# phantomies-examples
-A collection of basic to advance examples that help in learning phantomJS and it's wrappers e.g. NightmareJS, HorsmanJS, etc.
+# Headless Browser Examples
+A collection of basic to advance examples that help in learn Website Testing, Page Automation, Network Monitoring, and other amazing things using phantomJS, NightmareJS, HorsmanJS, etc.
