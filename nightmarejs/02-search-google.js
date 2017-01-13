@@ -21,7 +21,7 @@
 
   /*function declarations*/
 
-  //logs hello to nightmare with its version
+  //Retrieves the Title and Link info for top 10 google results
   function searchGoogle(searchString) {
     var URL, encodedString;
 
@@ -34,7 +34,7 @@
     //generate URL to use for query
     URL = 'https://www.google.com.pk/#q=' + encodedString;
 
-    console.log(URL);
+    //console.log(URL);
 
     //execute the request
     browser
