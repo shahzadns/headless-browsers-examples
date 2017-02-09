@@ -41,12 +41,13 @@
       .goto(URL)
       //.wait('#main #cnt #center_col #res ._NId') //faster but could get outdated if Google changes the layout
       .wait('#res')
+      .wait(500)
       .evaluate(function () {
         var resultsDOM, resultsArray;
 
         resultsArray = [];
 
-        resultsDOM = document.querySelectorAll('#res ._NId h3 a');
+        resultsDOM = document.querySelectorAll('#res ._NId:last-child h3 a');
 
         for (var i = 0; i < resultsDOM.length; i++) {
           resultsArray.push({
@@ -59,8 +60,12 @@
       })
       .end()
       .then(function (results) {
-        console.log('Top 10 results retrieved');
+        console.log('Top '+ results.length +' results retrieved');
         console.log(results);
+      })
+      .catch(function (err) {
+        console.log('Error occurred.');
+        console.log(err);
       });
 
   }
