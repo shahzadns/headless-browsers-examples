@@ -1,5 +1,5 @@
 /**
- * Created by Shahzad on 09/012/2017.
+ * Created by Shahzad on 09/12/2017.
  */
 
 (function () {
@@ -9,6 +9,7 @@
   var Nightmare = require('nightmare');
 
   /*locals*/
+  var firstTime = true;
   
   // our new class that is going to be a wrapper over Nightmare
   function Lovely(config) {
@@ -57,11 +58,32 @@
       .evaluate(function () {
         // return the title of the target web page
         return document.title;
+      }, function () {
+        console.log('test');
       })
       .end()
       .then(function (title) {
         console.log('Title of home page is ' + title);
         console.log('DONE');
+        //return browser.end();
+      })
+      .then(function (title) {
+        console.log('second then');
+        return 'lorem';
+      })
+      .then(function (info) {
+        console.log('then', info);
+
+        //reusing same instance.
+        if (firstTime) {
+          console.log('firstTime: starting again');
+          setTimeout(start, 2000);
+          firstTime = false;
+          browser.end();
+        } else {
+          console.log('secondTime: ending');
+        }
+
       })
       .catch(function (err) {
         console.log('Error occurred.');
