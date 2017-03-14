@@ -13,7 +13,9 @@
   var browser, search;
 
   /*initialization*/
-  browser = Nightmare();
+  browser = Nightmare({
+    show: true
+  });
 
   search = 'Headless Browsers';
   searchGoogle(search);
